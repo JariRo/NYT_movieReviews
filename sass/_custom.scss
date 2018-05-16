@@ -1,0 +1,154 @@
+html{
+  position:relative;
+  min-height:100%;
+}
+
+body{
+  margin-bottom:60px;
+}
+
+.showcase{
+  padding:30px 0 0 0;
+  text-align: center;
+
+  h1{
+    font-size: 40px;
+  }
+}
+
+#filters{
+
+  .box-Holder{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+
+    input[type="radio"]{
+      position:absolute;
+      opacity:0;
+      z-index:-1;
+    }
+
+    label{
+      min-width: 45%;
+      margin-right:10px;
+      margin-left: 10px;
+      padding-left:10px;
+      padding-right:10px;
+      line-height: 36px;
+      vertical-align: middle;
+      cursor:pointer;
+      font-size: 14px;
+      background: $main-color;
+      color:#fff;
+      text-align: center;
+      border:1px solid #000;
+    }
+
+    label:hover{
+      background-color: darken($main-color, 10%);
+
+    }
+
+    input[type="radio"]:checked + label{
+      background:#DB0000;
+    }
+  }
+}
+
+.page-info{
+  margin-top:30px;
+
+  #movieApp{
+    h2{
+      text-align: center;
+    }
+
+    .panel{
+      margin-top:10px;
+    }
+
+    #movieResults{
+      -webkit-display:flex;
+      -moz-display:flex;
+      -ms-display:flex;
+      display:flex;
+      -webkit-flex-direction:row;
+      -moz-flex-direction:row;
+      -ms-flex-direction:row;
+      flex-direction: row;
+      -webkit-wrap:wrap;
+      -moz-wrap:wrap;
+      -ms-wrap:wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content:center;
+      -moz-justify-content:center;
+      -ms-justify-content:center;
+      justify-content: center;
+    }
+
+    .thumbnail{
+      background: #ccc;
+      text-align: center;
+      border-radius: 0;
+
+      width:210px;
+      height:140px;
+      overflow:hidden;
+
+      figcaption{
+        position:relative;
+        color: set-text-color($main-color) !important;
+        padding:0;
+
+        h4{
+          visibility:visible;
+          margin-bottom:0;
+          opacity:1;
+          -webkit-transition:visibility 0s, opacity 0.5s linear;
+          -moz-transition:visibility 0s, opacity 0.5s linear;
+          -ms-transition:visibility 0s, opacity 0.5s linear;
+          transition:visibility 0s, opacity 0.5s linear;
+        }
+        p{
+          width:100%;
+          position:absolute;
+          top:0;
+          left:0;
+          right:0;
+          visibility:hidden;
+          margin:0;
+          opacity: 0;
+          -webkit-transition:visibility 0s, opacity 0.5s linear;
+          -moz-transition:visibility 0s, opacity 0.5s linear;
+          -ms-transition:visibility 0s, opacity 0.5s linear;
+          transition:visibility 0s, opacity 0.5s linear;
+        }
+      }
+    }
+    .thumbnail:hover > figcaption > h4{
+      visibility:hidden;
+      opacity:0;
+    }
+    .thumbnail:hover > figcaption > p {
+      visibility:visible;
+      opacity:1;
+    }
+
+    .media-object{
+      max-width:80%;
+    }
+  }
+}
+
+footer{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;
+  background:darken($main-color, 10%);
+  color: set-text-color($main-color);
+  p{
+    margin:20px 0;
+  }
+}
